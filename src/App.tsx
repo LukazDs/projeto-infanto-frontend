@@ -1,13 +1,10 @@
 import './styles/reset.css'
+import { Login } from './pages/Login'
 
 function App() {
 
   return (
-    <><p>
-      fsfdf
-    </p>
-  
-    </>
+    <Login />
   )
 }
 
