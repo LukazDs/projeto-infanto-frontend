@@ -1,9 +1,18 @@
 import styled from "styled-components";
 
+interface IPropForm {
+    height:  string,
+}
+
+interface IPropOption {
+    width:  string,
+}
+
+
 export const Form = styled.form`
     margin-top: 40px;
-    width: 52%;
-    height: 50vh;
+    width: 38%;
+    height: ${(p: IPropForm) => p.height};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,6 +27,7 @@ export const Form = styled.form`
 
         button {
             width: 28%;
+            
         }
     }
 `
@@ -25,19 +35,20 @@ export const Form = styled.form`
 export const Input = styled.input`
     color: #251919;
     background-color: white !important;
-    width: 184px;
-    height: 36px;
+    width: 194px;
+    height: 46px;
     box-sizing: border-box;
     border-radius: 10px;
     font-family: 'Open Sans', sans-serif;
     font-size: medium;
     font-weight: 800;
     padding-left: 12px;
+    margin-left: 18px;
 `
 
 export const Button = styled.button`
-    width: 18%;
-    height: 12%;
+    padding: 0 10px;
+    height: 42px;
     box-sizing: border-box;
     background-color: #00aeff;
     border-radius: 10px;
@@ -45,7 +56,7 @@ export const Button = styled.button`
     align-items: center;
     justify-content: center;
     font-family: 'Open Sans', sans-serif;
-    font-size: large;
+    font-size: larger;
     font-weight: bold;
     margin: 28px 0px;
     color: white;
@@ -55,15 +66,18 @@ export const Label = styled.label`
     color: black;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    font-size: medium;
-    margin-left: 8px;
-    width: 86px;
+    font-size: small;
+    word-wrap: break-word;
+
 `
 
 export const Option = styled.label`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: ${(p: IPropOption) => p.width};
     margin-top: 8px;
+    @media (max-width: 750px) {
+        width: 86%;
+    }
 `
